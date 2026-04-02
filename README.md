@@ -34,6 +34,10 @@ The project comes with a predefined configuration for Windows Desktop.
 3. Select the **Windows Desktop** preset. *(If prompted, download the missing Export Templates)*.
 4. Click **Export Project**, uncheck "Export With Debug", and choose your destination folder.
 
-## 📄 License
+## � Changelog
+- **v1.0.1**: Fixed a UI scaling bug where the board container's grid node path caused a crash during initialization.
+- **v1.0.0**: Initial release with PvP/PvE modes, static typing, and responsive layout.
+
+## �📄 License
 This project is open-source and available under the [BSD 3-Clause License](LICENSE).
 

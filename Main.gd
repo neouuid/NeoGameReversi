@@ -9,7 +9,7 @@ var game_mode: int = 0 # 0: PvP, 1: PvE (Player is Black, AI is White)
 var ai_timer: float = 0.0
 var ai_thinking: bool = false
 
-@onready var grid: GridContainer = $BoardContainer/Grid
+@onready var grid: GridContainer = $BoardContainer/AspectRatio/Grid
 @onready var turn_label: Label = $UI/Margin/HBox/TurnLabel
 @onready var black_score: Label = $UI/Margin/HBox/BlackScore
 @onready var white_score: Label = $UI/Margin/HBox/WhiteScore
