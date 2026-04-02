@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://c7t1e38b3k4"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_abcde"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abcde")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.14, 0.18, 1)
+
+[node name="BoardContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="AspectRatio" type="AspectRatioContainer" parent="BoardContainer"]
+layout_mode = 2
+ratio = 1.0
+
+[node name="Grid" type="GridContainer" parent="BoardContainer/AspectRatio"]
+layout_mode = 2
+columns = 8
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Margin" type="MarginContainer" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="HBox" type="HBoxContainer" parent="UI/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="TurnLabel" type="Label" parent="UI/Margin/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Turn: Black"
+
+[node name="Spacer" type="Control" parent="UI/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BlackScore" type="Label" parent="UI/Margin/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Black: 2"
+
+[node name="Spacer2" type="Control" parent="UI/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WhiteScore" type="Label" parent="UI/Margin/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "White: 2"
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 10
+
+[node name="WinnerLabel" type="Label" parent="UI/GameOverPanel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Black Wins!"
+horizontal_alignment = 1
+
+[node name="RestartPVPButton" type="Button" parent="UI/GameOverPanel/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Player vs Player"
+
+[node name="RestartPvEButton" type="Button" parent="UI/GameOverPanel/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Player vs AI"
